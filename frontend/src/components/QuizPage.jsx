@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import questionsData from "../assets/questions.json";
 import "./QuizPage.css";
 

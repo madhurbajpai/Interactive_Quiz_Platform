@@ -13,6 +13,7 @@ const EntryPage = () => {
   const handleAnalyze = () => {
     const quiz = localStorage.getItem("quizHistory");
     if (!quiz) {
+      //checking whether the quiz is attempted or not at least once
       alert("You need to attempt a quiz first.");
     } else {
       navigate("/analyze"); // navigate to analyze page
