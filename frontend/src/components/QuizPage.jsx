@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import questionsData from "../assets/questions.json";
 import "./QuizPage.css";
 
 const QuizPage = () => {
@@ -11,27 +12,11 @@ const QuizPage = () => {
   const [score, setScore] = useState(0);
   const [results, setResults] = useState([]);
   const [questionTimer, setQuestionTimer] = useState(30);
-  const [quizTimer, setQuizTimer] = useState(1800); // 30 minutes
   const navigate = useNavigate();
 
   // Fetch Questions
   useEffect(() => {
-    const fetchQuestions = async () => {
-      const email = localStorage.getItem("userEmail");
-      if (!email) {
-        navigate("/"); // Redirect to entry page if no email found
-        return;
-      }
-
-      try {
-        const response = await axios.get("http://localhost:5000/questions");
-        setQuestions(response.data);
-      } catch (e) {
-        console.log(e);
-      }
-    };
-
-    fetchQuestions();
+    setQuestions(questionsData);
   }, [navigate]);
 
   useEffect(() => {
@@ -43,16 +28,6 @@ const QuizPage = () => {
     }, 1000);
     return () => clearInterval(interval);
   }, [questionTimer]);
-
-  useEffect(() => {
-    if (quizTimer === 0) {
-      handleSubmitQuiz();
-    }
-    const interval = setInterval(() => {
-      setQuizTimer((prev) => (prev > 0 ? prev - 1 : 0));
-    }, 1000);
-    return () => clearInterval(interval);
-  }, [quizTimer]);
 
   if (!questions.length) return <p>Loading...</p>;
 
@@ -89,40 +64,47 @@ const QuizPage = () => {
   const handleSubmitQuiz = () => {
     const prevAttempts = JSON.parse(localStorage.getItem("quizHistory")) || [];
     const newAttempt = { score, results };
-    
+
     // Save new attempt
     localStorage.setItem("quizHistory", JSON.stringify([...prevAttempts, newAttempt]));
-  
+
     navigate("/analyze");
   };
-  
 
   return (
-    <div>
-      <h2>{currentQuestion.question}</h2>
-      <p>Time Left: {questionTimer}s | Quiz Time Left: {Math.floor(quizTimer / 60)}:{quizTimer % 60}</p>
+    <div className="quiz-container">
+      <div className="timer">Time Left: {questionTimer}s</div>
 
-      {currentQuestion.type === "mcq" ? (
-        currentQuestion.options.map((opt, idx) => (
-          <button key={idx} onClick={() => handleAnswer(opt)}>
-            {opt}
-          </button>
-        ))
-      ) : (
-        <input
-          type="number"
-          value={selectedAnswer}
-          onChange={(e) => setSelectedAnswer(e.target.value)}
-        />
-      )}
+      <div className="question-section">
+        <h3 className="question-number">Question {currentIndex + 1} of {questions.length}</h3>
+        <h2 className="question-text">{currentQuestion.question}</h2>
 
-      {currentQuestion.type === "integer" && (
-        <button onClick={() => handleAnswer(selectedAnswer)}>Submit</button>
-      )}
+        {currentQuestion.type === "mcq" ? (
+          <div className="options">
+            {currentQuestion.options.map((opt, idx) => (
+              <button key={idx} className="option-btn" onClick={() => handleAnswer(opt)}>
+                {opt}
+              </button>
+            ))}
+          </div>
+        ) : (
+          <div className="input-section">
+            <input
+              type="number"
+              className="input-box"
+              value={selectedAnswer}
+              onChange={(e) => setSelectedAnswer(e.target.value)}
+            />
+            <button className="submit-btn" onClick={() => handleAnswer(selectedAnswer)}>
+              Submit
+            </button>
+          </div>
+        )}
+      </div>
 
-      {feedback && <p>{feedback}</p>}
+      {feedback && <p className="feedback">{feedback}</p>}
 
-      <button onClick={handleSubmitQuiz} style={{ marginTop: "20px" }}>
+      <button className="submit-quiz-btn" onClick={handleSubmitQuiz}>
         Submit Quiz
       </button>
     </div>
