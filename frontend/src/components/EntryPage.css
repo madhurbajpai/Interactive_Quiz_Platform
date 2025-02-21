@@ -1,0 +1,82 @@
+.entry-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #282828;
+}
+
+.heading {
+  font-size: 2.5rem;
+  color: whitesmoke;
+  margin-bottom: 20px;
+}
+
+.entry-page p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 30px;
+  text-align: center;
+  max-width: 600px;
+}
+
+
+
+.email-input {
+  padding: 10px;
+}
+
+
+.input {
+  width: 200px;
+  height: 45px;
+  border: none;
+  outline: none;
+  padding: 0px 7px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 15px;
+  background-color: transparent;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.input:focus {
+  border: 2px solid transparent;
+  color: #fff;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 1),
+    -1px -1px 6px rgba(255, 255, 255, 0.4), inset 3px 3px 10px rgba(0, 0, 0, 1),
+    inset -1px -1px 6px rgba(255, 255, 255, 0.4);
+}
+
+.btn-holder {
+  margin: 20px;
+}
+
+/* From Uiverse.io by lenfear23 */ 
+button {
+    margin: 12px;
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    background: #333;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #444,
+      inset -5px -5px 10px #222;
+    font-family: "Damion", cursive;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    color: rgb(161, 161, 161);
+    transition: 500ms;
+  }
+  
+  button:hover {
+    box-shadow: -5px -5px 15px #444, 5px 5px 15px #222, inset 5px 5px 10px #222,
+      inset -5px -5px 10px #444;
+    color: #d6d6d6;
+    transition: 500ms;
+  }
+  

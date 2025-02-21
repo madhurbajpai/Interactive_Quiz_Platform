@@ -1,0 +1,84 @@
+.analyze-page {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #38373e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .heading {
+    color: whitesmoke;
+    font-size: 24px;
+    margin-bottom: 20px;
+    background-color: inherit;
+  }
+  
+  .label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+    background-color: inherit;
+  }
+
+  .label strong{
+    background-color: inherit;
+  }
+  
+  .select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: inherit;
+  }
+  
+  .head3 {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #007bff;
+    background-color: inherit;
+  }
+  
+  .score {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #007bff;
+    background-color: inherit;
+  }
+  
+  .results {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    background-color: inherit;
+  }
+  
+  .results li {
+    background: #38373e;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    background-color: inherit;
+  }
+  
+  .results li strong {
+    display: block;
+    color: whitesmoke;
+    margin-bottom: 5px;
+    background-color: inherit;
+  }
+  
+  .err {
+    font-size: 18px;
+    color: red;
+    margin-top: 20px;
+    background-color: inherit;
+  }
+  

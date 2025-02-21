@@ -1,0 +1,120 @@
+.quiz-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #38373e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.timer {
+  font-size: 18px;
+  font-weight: bold;
+  color: #d9534f;
+  margin-bottom: 15px;
+  background-color: inherit;
+}
+
+.question-section {
+  margin-bottom: 20px;
+  background-color: inherit;
+}
+
+.question-number {
+  background-color: inherit;
+  font-size: 18px;
+  color: greenyellow;
+  margin-bottom: 10px;
+}
+
+.question-text {
+  background-color: inherit;
+  font-size: 22px;
+  color: whitesmoke;
+  margin-bottom: 20px;
+}
+
+.options {
+  background-color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option-btn {
+  background-color: #007bff;
+  width: auto;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.option-btn:hover {
+  background-color: #0056b3;
+}
+
+.input-section {
+  background-color: inherit;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.input-box {
+  width: 80px;
+  margin-top: 18px;
+  padding: 8px;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.input-box::-webkit-outer-spin-button,
+.input-box::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-box {
+  -moz-appearance: textfield;
+}
+
+.submit-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: #218838;
+}
+
+.feedback {
+  background-color: inherit;
+  font-size: 18px;
+  margin-top: 15px;
+}
+
+.submit-quiz-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.submit-quiz-btn:hover {
+  background-color: #c82333;
+}
